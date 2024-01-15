@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+</head>
+<body>
+    <h1>Generated Summary</h1>
+    {% if error_msg %}
+       <p>{{ error_msg }}</p>
+    {% endif %}
+    <form method="POST" action="/predict" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".pdf">
+        <input type="submit" value="Upload and Generate Summary">
+    </form>
+    
+    {% if result %}
+       <h2>Answer: {{ result }}</h2>
+    {% endif %}
+
+</body>
+</html>
+
+
